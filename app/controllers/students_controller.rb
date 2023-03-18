@@ -14,12 +14,4 @@ class StudentsController < ApplicationController
     render json: students
   end
 
-  def studsearch
-    if params[:name]
-      students = Student.where("first_name LIKE ? OR last_name LIKE ?", "%#{params[:name]}%", "%#{params[:name]}%")
-    else
-      students = Student.all
-    end
-  end
-
 end
